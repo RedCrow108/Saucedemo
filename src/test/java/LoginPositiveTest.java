@@ -35,7 +35,7 @@ public class LoginPositiveTest {
         driver.findElement(By.name("password")).sendKeys("secret_sauce"); // Ввод пароля
         driver.findElement(By.cssSelector("#login-button")).click(); // Нажатие на кнопку логина
         String errorMessage = driver.findElement(By.cssSelector("#login_button_container > div > form > div.error-message-container.error > h3")).getText();
-        Assert.assertEquals(errorMessage, "Epic sadface: Sorry, this user has been locked out.");
+        Assert.assertEquals(errorMessage, "Epic sadface: Sorry, this user has been locked out."); // Проверка, что получено соответствующее сообщение об ошибке
     }
 
     @AfterClass(alwaysRun = true)
