@@ -17,7 +17,7 @@ public class LoginNegativeTest3 {
 
 
     @Test
-    public void LoginNeg03() {
+    public void LoginNeg003() {
         Assert.assertTrue(driver.findElement(By.cssSelector("#login-button")).isDisplayed()); // Проверка, что находимся на странице с кнопкой логина
         driver.findElement(By.name("password")).sendKeys("secret_sauce"); // Ввод не валидного пароля
         driver.findElement(By.cssSelector("#login-button")).click(); // Нажатие на кнопку логина

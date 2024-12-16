@@ -16,7 +16,7 @@ public class LoginPositiveTest {
     }
 
     @Test
-    public void LoginPos01() {
+    public void LoginPos001() {
         Assert.assertTrue(driver.findElement(By.cssSelector("#login-button")).isDisplayed()); // Проверка, что находимся на странице с кнопкой логина
         driver.findElement(By.name("user-name")).sendKeys("standard_user"); // Ввод логина
         driver.findElement(By.name("password")).sendKeys("secret_sauce"); // Ввод пароля
@@ -28,7 +28,7 @@ public class LoginPositiveTest {
     }
 
     @Test
-    public void LoginPos02() {
+    public void LoginPos002() {
         Assert.assertTrue(driver.findElement(By.cssSelector("#login-button")).isDisplayed()); // Проверка, что находимся на странице с кнопкой логина
         driver.findElement(By.name("user-name")).sendKeys("locked_out_user"); // Ввод логина
         driver.findElement(By.name("password")).sendKeys("secret_sauce"); // Ввод пароля
