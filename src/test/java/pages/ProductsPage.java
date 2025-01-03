@@ -8,7 +8,7 @@ public class ProductsPage {
     WebDriver driver;
 
     By title = By.cssSelector("[data-test=title]");
-    By addToCartButtonBackpack = By.id("add-to-cart-sauce-labs-backpack");
+    String addToCartPattern = "//div[text()='%s']//ancestor::div[@class='inventory_item']//button";
 
     public ProductsPage(WebDriver driver) {
         this.driver = driver;
@@ -17,9 +17,7 @@ public class ProductsPage {
     public String getTitle() {
         return driver.findElement(title).getText();
     }
-
-    public void addToCart() {
-        driver.findElement(addToCartButtonBackpack).click();
+   public void addToCart(String product) {
+        driver.findElement(By.xpath(String.format(addToCartPattern, product))).click();
     }
-
 }
