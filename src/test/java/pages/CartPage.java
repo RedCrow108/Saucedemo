@@ -8,7 +8,7 @@ public class CartPage {
     WebDriver driver;
 
     By cartOpen = By.cssSelector("[data-test=shopping-cart-link]");
-    By RemoveButtonBackpack = By.id("remove-sauce-labs-backpack");
+    String cartRemoveButtonPattern = "//div[text()='%s']//ancestor::div[@class='cart_list']//button";
 
     public CartPage(WebDriver driver) {
         this.driver = driver;
@@ -18,8 +18,7 @@ public class CartPage {
         driver.findElement(cartOpen).click();
     }
 
-    public boolean getRemoveButton() {
-        return driver.findElement(RemoveButtonBackpack).isEnabled();
-
-    }
+   public boolean getRemoveButton(String product) {
+       return driver.findElement(By.xpath(String.format(cartRemoveButtonPattern, product))).isEnabled();
+   }
 }

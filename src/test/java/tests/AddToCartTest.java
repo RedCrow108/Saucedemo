@@ -9,10 +9,9 @@ public class AddToCartTest extends BaseTest {
     public void AddToCartBackPack() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
-        productsPage.addToCart();
+        productsPage.addToCart("Sauce Labs Bike Light");
         cartPage.CartPageOpen();
         Assert.assertTrue(
-                cartPage.getRemoveButton()); // Проверяет что getRemoveButton возвращает значение "True"
-
+                cartPage.getRemoveButton("Sauce Labs Bike Light")); // Проверяет что getRemoveButton возвращает значение "True"
     }
 }

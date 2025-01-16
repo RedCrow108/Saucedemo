@@ -24,7 +24,6 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
-
     }
 
     @AfterClass(alwaysRun = true)

@@ -7,9 +7,9 @@ public class LoginPage {
 
     WebDriver driver;
 
-    By userField = By.id("user-name");
-    By passwordField = By.id("password");
-    By loginButton = By.id("login-button");
+    By userField = By.xpath("/html/body/div/div/div[2]/div[1]/div/div/form/div[1]/input");
+    By passwordField = By.xpath("/html/body/div/div/div[2]/div[1]/div/div/form/div[2]/input");
+    By loginButton = By.xpath("/html/body/div/div/div[2]/div[1]/div/div/form/input");
     By errorMessage = By.cssSelector("[data-test=error]");
 
     public LoginPage(WebDriver driver) {
@@ -29,5 +29,4 @@ public class LoginPage {
     public String getErrorMessage() {
         return driver.findElement(errorMessage).getText();
     }
-
 }
