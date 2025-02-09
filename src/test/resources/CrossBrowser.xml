@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="SauceDemo CrossBrowser" parallel="tests">
+    <listeners>
+        <listener class-name="tests.TestListener"/>
+        <listener class-name="tests.AnnotationTransformer"/>
+    </listeners>
+    <test name="Chrome">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.LoginTest">
+                <methods>
+                    <exclude name="checkLoginWithNotValidPassword"/>
+                    <exclude name="checkLoginWithNotValidUserName"/>
+                </methods>
+            </class>
+            <class name="tests.AddToCartTest"/>
+            <parameter name="browser" value="chrome"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="Edge">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.AddToCartTest"/>
+            <parameter name="browser" value="edge"/>
+        </classes>
+    </test> <!-- Test -->
+</suite>
