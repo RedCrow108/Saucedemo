@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,12 +14,12 @@ public class CartPage {
     public CartPage(WebDriver driver) {
         this.driver = driver;
     }
-
+    @Step("Открытие корзины")
     public void CartPageOpen() {
         driver.findElement(cartOpen).click();
     }
-
-   public boolean getRemoveButton(String product) {
+    @Step("Проверка активности кнопки удаления из корзины")
+    public boolean getRemoveButton(String product) {
        return driver.findElement(By.xpath(String.format(cartRemoveButtonPattern, product))).isEnabled();
    }
 }
